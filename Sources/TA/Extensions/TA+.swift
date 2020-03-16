@@ -1,25 +1,36 @@
 extension TA {
-	@discardableResult
-	mutating func start() -> Self {
-		createUser()
+    init() {
+        let user = TA.createUser()
+        let map = TA.createMap()
 
-		return self
-	}	
+        self = TA(user: user, map: map)
+    }
+}
 
-	mutating func createUser() {
-		print("Welcome to TA!")
-		print("Enter your name: ")
+// MARK: Static Functions
+extension TA {
+    static func createUser() -> User{
+        print("Welcome to TA!")
+        print("Enter your name: ")
 
-		guard let input = readLine() else {
-			fatalError("Bad Input!")
-		}
-		
-		user = User(name: input)
+        guard let input = readLine() else {
+            fatalError("Bad Input!")
+        }
 
-		guard let user = user else {
-			fatalError("Could not create user.")
-		}
-		
-		print("Created: \(user)")
-	}
+        let user = User(name: input)
+
+        print("Created: \(user)")
+
+        return user
+    }
+
+    static func createMap(withSize size: Int = 10) -> Map {
+        print("Creating Map")
+
+        var map = Map(size: size)
+
+        print(map.console)
+
+        return map
+    }
 }
