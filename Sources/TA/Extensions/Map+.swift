@@ -5,13 +5,15 @@ public extension Map {
         (0 ..< size).map { y in
             var row = [MapVisable]()
             (0 ..< size).map { x in
-            print(data.filter({ $0.location == Point(x: x, y: y) }).count)
-                if let point = data.filter({ $0.location == Point(x: x, y: y) }).sorted(by: { $0.z > $1.z }).first {
+                if let point = data
+                    .filter({ $0.location == Point(x: x, y: y) })
+                    .sorted(by: { $0.z > $1.z })
+                    .first {
                     row.append(point)
                 } else {
                     row.append(MapPoint.mock)
                 }
-               
+
             }
             map.append(row)
         }
@@ -25,7 +27,7 @@ public extension Map {
         }
         .joined()
     }
-    
+
     init(size: Int = 10) {
         self.size = size
         self.data = []

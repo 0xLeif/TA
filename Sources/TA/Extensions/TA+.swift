@@ -1,3 +1,5 @@
+import Foundation
+
 extension TA {
     init() {
         let user = TA.createUser()
@@ -7,6 +9,16 @@ extension TA {
         
         self = TA(user: user, map: map)
     }
+}
+
+extension TA {
+	func start() {
+		while true {
+			print(map.console)
+			// Requires Foundation
+			sleep(3)
+		}
+	}
 }
 
 // MARK: Static Functions
@@ -30,8 +42,6 @@ extension TA {
         print("Creating Map")
 
         var map = Map(size: size)
-
-        print(map.console)
 
         return map
     }
