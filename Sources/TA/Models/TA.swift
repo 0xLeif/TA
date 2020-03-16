@@ -1,4 +1,4 @@
-struct TA {
-    var user: User
-    var map: Map
+public struct TA {
+    public var user: User
+    public var map: Map
 }

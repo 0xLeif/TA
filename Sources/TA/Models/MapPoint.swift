@@ -1,11 +1,15 @@
-struct MapPoint {
-    var point: Point
-    var symbol: String
+public struct MapPoint {
+    public var location: Point
+    public var symbol: String
+    public var z: Int {
+        0
+    }
 }
 
 // MARK: Mock
+extension MapPoint: MapVisable { }
 extension MapPoint: Mockable {
-    static var mock: Self {
-        MapPoint(point: Point.mock, symbol: "x")
+    public static var mock: Self {
+        MapPoint(location: Point.mock, symbol: "x")
     }
 }

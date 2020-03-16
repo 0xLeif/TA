@@ -1,8 +1,14 @@
-struct User {
-    var name: String
+public struct User {
+    public var name: String
 
 	// MARK: PlayerController
-	var postion: Point = Point(x: 0, y: 0)
+	public var location: Point = Point(x: 5, y: 5)
+	public var symbol: String {
+		"c"
+	}
+	public var z: Int {
+		1
+	}
 }
 
 extension User: PlayerController {}

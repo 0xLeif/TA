@@ -1,4 +1,4 @@
 public struct Map {
-    var size: Int
-    var data: [[MapPoint]] = []
+    public var size: Int
+    public var data: [MapVisable]
 }

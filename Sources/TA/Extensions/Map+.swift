@@ -1,6 +1,23 @@
 public extension Map {
     var console: String {
-        data.map { row in 
+        var map = [[MapVisable]]()
+
+        (0 ..< size).map { y in
+            var row = [MapVisable]()
+            (0 ..< size).map { x in
+            print(data.filter({ $0.location == Point(x: x, y: y) }).count)
+                if let point = data.filter({ $0.location == Point(x: x, y: y) }).sorted(by: { $0.z > $1.z }).first {
+                    row.append(point)
+                } else {
+                    row.append(MapPoint.mock)
+                }
+               
+            }
+            map.append(row)
+        }
+
+
+        return map.map { row in 
             row.map { point in
                 point.symbol
             }
@@ -13,11 +30,15 @@ public extension Map {
         self.size = size
         self.data = []
         (0 ..< size).forEach { y in
-            var row = [MapPoint]()
             (0 ..< size).forEach { x in 
-                row.append(MapPoint.mock)
+                var point = MapPoint.mock
+                point.location = Point(x: x, y: y)
+                data.append(point)
             }
-            data.append(row)
         }
+    }
+
+    mutating func add(point: MapVisable) {
+        data.append(point)
     }
 }

@@ -1,8 +1,10 @@
 extension TA {
     init() {
         let user = TA.createUser()
-        let map = TA.createMap()
+        var map = TA.createMap()
 
+        map.add(point: user)
+        
         self = TA(user: user, map: map)
     }
 }

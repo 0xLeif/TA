@@ -1,3 +1,3 @@
-protocol PlayerController {
-    var postion: Point { get set }
+public protocol PlayerController: MapVisable {
+
 }
