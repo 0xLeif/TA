@@ -1,5 +1,5 @@
 class Console {
-  class func clear() {
-    print("\u{001B}[2J")
-  }
+    class func clear() {
+        print("\u{001B}[2J")
+    }
 }

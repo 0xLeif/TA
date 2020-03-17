@@ -5,23 +5,23 @@ extension TA {
         var map = TA.createMap()
 
         map.add(point: user)
-        
+
         self = TA(user: user, map: map)
     }
 }
 
 extension TA {
-	func start() {
-		while true {
-			print(map.console)
-      print(": ", terminator: "")
-      if let command = readLine() {
-        print("You want to: \(command)")
-      } else {
-        print("Invalid Command...")
-      }
-		}
-	}
+    func start() {
+        while true {
+            print(map.console)
+            print(": ", terminator: "")
+            if let command = readLine() {
+                print("You want to: \(command)")
+            } else {
+                print("Invalid Command...")
+            }
+        }
+    }
 }
 
 // MARK: Static Functions

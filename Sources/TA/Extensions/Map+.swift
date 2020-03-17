@@ -18,7 +18,6 @@ public extension Map {
             map.append(row)
         }
 
-
         return map.map { row in 
             row.map { point in
                 point.symbol
