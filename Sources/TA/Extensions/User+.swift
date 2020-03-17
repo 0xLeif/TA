@@ -18,7 +18,7 @@ extension User: PlayerController {
             location.x += 1
         default:
             print("\(name) thinks about '\(action)'")
-            
+
         }
     }
 }

@@ -18,8 +18,8 @@ extension TA {
             if let command = readLine() {
                 print("You want to: \(command)")
                 map.data
-                .compactMap({ $0 as? Actionable })
-                .forEach { $0.act(on: command) }
+                    .compactMap({ $0 as? Actionable })
+                    .forEach { $0.act(on: command) }
             } else {
                 print("Invalid Command...")
             }

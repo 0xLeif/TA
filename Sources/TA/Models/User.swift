@@ -10,8 +10,8 @@ public class User {
         1
     }
 
-	public init(name: String, location: Point) {
-		self.name = name
-		self.location = location
-	}
+    public init(name: String, location: Point) {
+        self.name = name
+        self.location = location
+    }
 }
