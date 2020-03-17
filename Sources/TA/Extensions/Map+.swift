@@ -2,9 +2,9 @@ public extension Map {
     var console: String {
         var map = [[MapVisable]]()
 
-        (0 ..< size).map { y in
+        (0 ..< size).forEach { y in
             var row = [MapVisable]()
-            (0 ..< size).map { x in
+            (0 ..< size).forEach { x in
                 if let point = data
                     .filter({ $0.location == Point(x: x, y: y) })
                     .sorted(by: { $0.z > $1.z })
