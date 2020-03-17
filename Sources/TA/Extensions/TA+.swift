@@ -2,7 +2,7 @@ public extension TA {
     convenience init() {
         Console.clear()
         let user = TA.createUser()
-        var map = TA.createMap()
+        var map = TA.createMap(withSize: 20)
 
         map.add(point: user)
 
@@ -44,7 +44,7 @@ extension TA {
         return user
     }
 
-    static func createMap(withSize size: Int = 10) -> Map {
+    static func createMap(withSize size: Int) -> Map {
         print("Creating Map")
 
         var map = Map(size: size)
