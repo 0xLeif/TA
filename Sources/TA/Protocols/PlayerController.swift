@@ -1,3 +1,1 @@
-public protocol PlayerController: MapVisable, Movable {
-
-}
+public protocol PlayerController: MapVisable, Movable, Actionable { }

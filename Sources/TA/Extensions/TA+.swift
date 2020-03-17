@@ -1,12 +1,12 @@
-extension TA {
-    init() {
+public extension TA {
+    convenience init() {
         Console.clear()
         let user = TA.createUser()
         var map = TA.createMap()
 
         map.add(point: user)
 
-        self = TA(user: user, map: map)
+        self.init(user: user, map: map)
     }
 }
 
@@ -17,6 +17,9 @@ extension TA {
             print(": ", terminator: "")
             if let command = readLine() {
                 print("You want to: \(command)")
+                map.data
+                .compactMap({ $0 as? Actionable })
+                .forEach { $0.act(on: command) }
             } else {
                 print("Invalid Command...")
             }
@@ -34,7 +37,7 @@ extension TA {
             fatalError("Bad Input!")
         }
 
-        let user = User(name: input)
+        let user = User(name: input, location: Point.mock)
 
         print("Created: \(user)")
 

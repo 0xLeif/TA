@@ -1,14 +1,17 @@
-public struct User {
+public class User {
     public var name: String
 
     // MARK: PlayerController
-    public var location: Point = Point(x: 5, y: 5)
+    public var location: Point
     public var symbol: String {
         "c"
     }
     public var z: Int {
         1
     }
-}
 
-extension User: PlayerController {}
+	public init(name: String, location: Point) {
+		self.name = name
+		self.location = location
+	}
+}

@@ -13,7 +13,6 @@ public extension Map {
                 } else {
                     row.append(MapPoint.mock)
                 }
-
             }
             map.append(row)
         }
