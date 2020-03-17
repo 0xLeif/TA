@@ -1,7 +1,6 @@
-import Foundation
-
 extension TA {
     init() {
+        Console.clear()
         let user = TA.createUser()
         var map = TA.createMap()
 
@@ -15,8 +14,12 @@ extension TA {
 	func start() {
 		while true {
 			print(map.console)
-			// Requires Foundation
-			sleep(3)
+      print(": ", terminator: "")
+      if let command = readLine() {
+        print("You want to: \(command)")
+      } else {
+        print("Invalid Command...")
+      }
 		}
 	}
 }
@@ -25,7 +28,7 @@ extension TA {
 extension TA {
     static func createUser() -> User{
         print("Welcome to TA!")
-        print("Enter your name: ")
+        print("Enter your name: ", terminator: "")
 
         guard let input = readLine() else {
             fatalError("Bad Input!")
