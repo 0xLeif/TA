@@ -1,1 +1,1 @@
-var ta = TA()
+TA().start()

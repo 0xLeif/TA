@@ -1,3 +1,3 @@
-protocol Mockable {
+public protocol Mockable {
     static var mock: Self { get }
 }
